@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'Contifigirations/page_route_name.dart';
 import 'Contifigirations/route.dart';
-import 'Pages/orders/orders_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -64,7 +63,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      initialRoute: PageRouteName.initial,
+      initialRoute: PageRouteName.graph,
       onGenerateRoute: Routes.generateRoute,
       builder: (context, child) => MediaQuery(
         data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
