@@ -8,7 +8,11 @@ A new Flutter project.
 https://user-images.githubusercontent.com/60290194/155898812-353a418a-99f9-46bd-ac51-312c143d8f67.mov
 
 
-This project is a starting point for a Flutter application.
+https://user-images.githubusercontent.com/60290194/155898932-58b089da-6f03-41bb-8e91-0c0c3bcccd81.mov
+
+### <a name="Applying"></a>
+- PMVVM
+
 
 
 resources helped me to get animation in task:
