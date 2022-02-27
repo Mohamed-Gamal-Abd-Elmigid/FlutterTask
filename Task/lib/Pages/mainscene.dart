@@ -12,13 +12,8 @@ class MainScene extends StatefulWidget {
 class _MainSceneState extends State<MainScene> {
   int index = 0;
   final screens = [
-    ScreenIndex("Order Detail", const OrdersScene()),
-    ScreenIndex("Order Graph", const Graph()),
-  ];
-
-  final titleAppBar = [
-    "Orders Detail",
-    "Orders Graph",
+    OrdersScene(),
+    Graph(),
   ];
 
   Widget menuItem(int id, String title, IconData icon, bool selected) {
@@ -55,7 +50,7 @@ class _MainSceneState extends State<MainScene> {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     return Scaffold(
-      body: screens[index].screen,
+      body: screens[index],
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(mediaQuery.size.height * 0.06),
         child: AppBar(
@@ -89,11 +84,4 @@ class _MainSceneState extends State<MainScene> {
       ),
     );
   }
-}
-
-class ScreenIndex {
-  String? title;
-  Widget? screen;
-
-  ScreenIndex(this.title, this.screen);
 }

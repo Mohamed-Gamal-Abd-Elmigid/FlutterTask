@@ -29,77 +29,79 @@ class GraphView extends HookView<OrdersViewModel> {
 
     return SafeArea(
       child: Scaffold(
-        body: SizedBox(
-          height: mediaQuery.height / 1.1,
-          child: Card(
-            elevation: 4,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(32),
-            ),
-            color: const Color(0xff020227),
-            child: Padding(
-              padding: const EdgeInsets.only(top: 16),
-              child: LineChart(
-                LineChartData(
-                  minX: 0,
-                  maxX: 12,
-                  minY: 0,
-                  maxY: 20,
-                  titlesData: LineTitles.getTitleData(),
-                  gridData: FlGridData(
-                    show: true,
-                    getDrawingHorizontalLine: (value) {
-                      return FlLine(
-                        color: const Color(0xff37434d),
-                        strokeWidth: 1,
-                      );
-                    },
-                    drawVerticalLine: true,
-                    getDrawingVerticalLine: (value) {
-                      return FlLine(
-                        color: const Color(0xff37434d),
-                        strokeWidth: 1,
-                      );
-                    },
+        body: viewModel.showGraph
+            ? SizedBox(
+                height: mediaQuery.height / 1.1,
+                child: Card(
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(32),
                   ),
-                  borderData: FlBorderData(
-                    show: true,
-                    border:
-                        Border.all(color: const Color(0xff37434d), width: 1),
-                  ),
-                  lineBarsData: [
-                    LineChartBarData(
-                      spots: [
-                        FlSpot(0, 0),
-                        FlSpot(1, viewModel.jan.toDouble()),
-                        FlSpot(2, viewModel.feb.toDouble()),
-                        FlSpot(3, viewModel.mar.toDouble()),
-                        FlSpot(4, viewModel.apr.toDouble()),
-                        FlSpot(5, viewModel.may.toDouble()),
-                        FlSpot(6, viewModel.jun.toDouble()),
-                        FlSpot(7, viewModel.jul.toDouble()),
-                        FlSpot(8, viewModel.aug.toDouble()),
-                        FlSpot(9, viewModel.sep.toDouble()),
-                        FlSpot(10, viewModel.oct.toDouble()),
-                        FlSpot(11, viewModel.nov.toDouble()),
-                        FlSpot(12, viewModel.dec.toDouble()),
-                      ],
-                      isCurved: true,
-                      colors: gradientColors,
-                      barWidth: 5,
-                      belowBarData: BarAreaData(
-                        show: true,
-                        colors: gradientColors
-                            .map((color) => color.withOpacity(0.3))
-                            .toList(),
+                  color: const Color(0xff020227),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 16),
+                    child: LineChart(
+                      LineChartData(
+                        minX: 0,
+                        maxX: 12,
+                        minY: 0,
+                        maxY: 20,
+                        titlesData: LineTitles.getTitleData(),
+                        gridData: FlGridData(
+                          show: true,
+                          getDrawingHorizontalLine: (value) {
+                            return FlLine(
+                              color: const Color(0xff37434d),
+                              strokeWidth: 1,
+                            );
+                          },
+                          drawVerticalLine: true,
+                          getDrawingVerticalLine: (value) {
+                            return FlLine(
+                              color: const Color(0xff37434d),
+                              strokeWidth: 1,
+                            );
+                          },
+                        ),
+                        borderData: FlBorderData(
+                          show: true,
+                          border: Border.all(
+                              color: const Color(0xff37434d), width: 1),
+                        ),
+                        lineBarsData: [
+                          LineChartBarData(
+                            spots: [
+                              FlSpot(0, 0),
+                              FlSpot(1, viewModel.jan.toDouble()),
+                              FlSpot(2, viewModel.feb.toDouble()),
+                              FlSpot(3, viewModel.mar.toDouble()),
+                              FlSpot(4, viewModel.apr.toDouble()),
+                              FlSpot(5, viewModel.may.toDouble()),
+                              FlSpot(6, viewModel.jun.toDouble()),
+                              FlSpot(7, viewModel.jul.toDouble()),
+                              FlSpot(8, viewModel.aug.toDouble()),
+                              FlSpot(9, viewModel.sep.toDouble()),
+                              FlSpot(10, viewModel.oct.toDouble()),
+                              FlSpot(11, viewModel.nov.toDouble()),
+                              FlSpot(12, viewModel.dec.toDouble()),
+                            ],
+                            isCurved: true,
+                            colors: gradientColors,
+                            barWidth: 5,
+                            belowBarData: BarAreaData(
+                              show: true,
+                              colors: gradientColors
+                                  .map((color) => color.withOpacity(0.3))
+                                  .toList(),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ],
+                  ),
                 ),
-              ),
-            ),
-          ),
-        ),
+              )
+            : Container(),
       ),
     );
   }

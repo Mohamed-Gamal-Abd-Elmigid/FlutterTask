@@ -24,34 +24,36 @@ class OrdersView extends HookView<OrdersViewModel> {
     final mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.all(20),
-          child: Column(
-            children: [
-              SizedBox(
-                height: mediaQuery.height * 0.04,
-              ),
-              CardItem(
-                title: "Total Account",
-                count: "${viewModel.flapKapItems!.length}",
-              ),
-              SizedBox(
-                height: mediaQuery.height * 0.04,
-              ),
-              CardItem(
-                title: "Average Price",
-                count: "${viewModel.finalMil}",
-              ),
-              SizedBox(
-                height: mediaQuery.height * 0.04,
-              ),
-              CardItem(
-                title: "Number Of Returns",
-                count: "${viewModel.returns.length}",
-              ),
-            ],
-          ),
-        ),
+        child: viewModel.showContent
+            ? Container(
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: mediaQuery.height * 0.04,
+                    ),
+                    CardItem(
+                      title: "Total Account",
+                      count: "${viewModel.flapKapItems!.length}",
+                    ),
+                    SizedBox(
+                      height: mediaQuery.height * 0.04,
+                    ),
+                    CardItem(
+                      title: "Average Price",
+                      count: "${viewModel.finalMil}",
+                    ),
+                    SizedBox(
+                      height: mediaQuery.height * 0.04,
+                    ),
+                    CardItem(
+                      title: "Number Of Returns",
+                      count: "${viewModel.returns.length}",
+                    ),
+                  ],
+                ),
+              )
+            : Container(),
       ),
     );
   }
