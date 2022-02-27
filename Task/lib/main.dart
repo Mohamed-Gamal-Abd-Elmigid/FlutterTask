@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      initialRoute: PageRouteName.graph,
+      initialRoute: PageRouteName.initial,
       onGenerateRoute: Routes.generateRoute,
       builder: (context, child) => MediaQuery(
         data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),

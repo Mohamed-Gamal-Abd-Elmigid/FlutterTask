@@ -70,18 +70,19 @@ class GraphView extends HookView<OrdersViewModel> {
                   lineBarsData: [
                     LineChartBarData(
                       spots: [
-                        FlSpot(0, viewModel.jan.toDouble()),
-                        FlSpot(1, viewModel.feb.toDouble()),
-                        FlSpot(2, viewModel.mar.toDouble()),
-                        FlSpot(3, viewModel.apr.toDouble()),
-                        FlSpot(4, viewModel.may.toDouble()),
-                        FlSpot(5, viewModel.jun.toDouble()),
-                        FlSpot(6, viewModel.jul.toDouble()),
-                        FlSpot(7, viewModel.aug.toDouble()),
-                        FlSpot(8, viewModel.sep.toDouble()),
-                        FlSpot(9, viewModel.oct.toDouble()),
-                        FlSpot(10, viewModel.nov.toDouble()),
-                        FlSpot(11, viewModel.dec.toDouble()),
+                        FlSpot(0, 0),
+                        FlSpot(1, viewModel.jan.toDouble()),
+                        FlSpot(2, viewModel.feb.toDouble()),
+                        FlSpot(3, viewModel.mar.toDouble()),
+                        FlSpot(4, viewModel.apr.toDouble()),
+                        FlSpot(5, viewModel.may.toDouble()),
+                        FlSpot(6, viewModel.jun.toDouble()),
+                        FlSpot(7, viewModel.jul.toDouble()),
+                        FlSpot(8, viewModel.aug.toDouble()),
+                        FlSpot(9, viewModel.sep.toDouble()),
+                        FlSpot(10, viewModel.oct.toDouble()),
+                        FlSpot(11, viewModel.nov.toDouble()),
+                        FlSpot(12, viewModel.dec.toDouble()),
                       ],
                       isCurved: true,
                       colors: gradientColors,
@@ -134,40 +135,58 @@ class LineTitles {
                 return 'SE';
               case 10:
                 return 'OC';
+              case 11:
+                return 'NO';
+              case 12:
+                return 'DE';
             }
             return '';
           },
           margin: 8,
         ),
-        // leftTitles: SideTitles(
-        //   showTitles: true,
-        //   getTitles: (value) {
-        //     switch (value.toInt()) {
-        //       case 1:
-        //         return '10';
-        //       case 2:
-        //         return '20';
-        //       case 3:
-        //         return '30';
-        //       case 4:
-        //         return '40';
-        //       case 5:
-        //         return '50';
-        //       case 6:
-        //         return '60';
-        //       case 7:
-        //         return '70';
-        //       case 8:
-        //         return '80';
-        //       case 9:
-        //         return '90';
-        //       case 10:
-        //         return '100';
-        //     }
-        //     return '';
-        //   },
-        //   reservedSize: 30,
-        //   margin: 10,
-        // ),
+        leftTitles: SideTitles(
+          showTitles: true,
+          getTitles: (value) {
+            switch (value.toInt()) {
+              case 1:
+                return '1';
+              case 2:
+                return '2';
+              case 3:
+                return '3';
+              case 4:
+                return '4';
+              case 5:
+                return '5';
+              case 6:
+                return '6';
+              case 7:
+                return '7';
+              case 8:
+                return '8';
+              case 9:
+                return '9';
+              case 10:
+                return '10';
+              case 11:
+                return '11';
+              case 12:
+                return '12';
+              case 13:
+                return '13';
+              case 14:
+                return '14';
+              case 15:
+                return '15';
+              case 10:
+                return '10';
+              case 10:
+                return '10';
+            }
+            return '';
+          },
+          reservedSize: 30,
+          margin: 10,
+        ),
       );
 }
